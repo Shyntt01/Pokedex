@@ -17,7 +17,16 @@ function convertPokeApiDetailToPokemon(pokeDetail, index) {
 }
 
 pokeApi.getPokemonDetail = (pokemon, index) => {
-    return fetch(pokemon.url)
+    const requestOptions = {
+        method: 'GET',
+        headers: {    
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*' },
+        };
+
+    
+    return fetch(pokemon.url, requestOptions)
         .then((response) => response.json())
         .then((pokeDetail) => convertPokeApiDetailToPokemon(pokeDetail, index));
 };
