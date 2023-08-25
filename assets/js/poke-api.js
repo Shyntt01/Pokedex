@@ -38,6 +38,6 @@ pokeApi.getPokemons = (offset = 0, limit = 5) => {
         .then((response) => response.json())
         .then((jsonBody) => jsonBody.results)
         .then((pokemons) => {
-            return Promise.all(pokemons.map((pokemon, index) => pokeApi.getPokemonDetail(pokemon, index)));
+            return Promise.all(pokemons.map((pokemon, index) => pokeApi.getPokemonDetail(pokemon, index + offset)));
         });
 };
