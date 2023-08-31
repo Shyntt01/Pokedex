@@ -19,5 +19,18 @@ body{
     margin: 0px;
     padding-left: 1rem;
 }
-
-
+.pokemon:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 110%;
+    height: 110%;
+    opacity: 0.5;
+    background-image: url(https://corporate.pokemon.com/hero-pokeball-3430739968171e9fe85357e4739be704.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    z-index: -1;
+}
